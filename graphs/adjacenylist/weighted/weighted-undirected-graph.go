@@ -20,7 +20,7 @@ func NewGraph() *Graph {
 	}
 }
 
-func (g *Graph) AddDirectedEdge(from, to, weight int) {
+func (g *Graph) AddEdge(from, to, weight int) {
 	edge := Edge{
 		To:     to,
 		Weight: weight,
@@ -35,7 +35,7 @@ func (g *Graph) AddDirectedEdge(from, to, weight int) {
 	g.adjacencyList[to] = append(g.adjacencyList[to], reverseEdge)
 }
 
-func (g *Graph) RemoveDirectedEdge(from, to int) {
+func (g *Graph) RemoveEdge(from, to int) {
 	//find and remove the edge 'from' to 'to'
 	for i, edge := range g.adjacencyList[from] {
 		if edge.To == to {
@@ -52,7 +52,7 @@ func (g *Graph) RemoveDirectedEdge(from, to int) {
 	}
 }
 
-func (g *Graph) RemoveUndirectedVertex(vertex int) {
+func (g *Graph) RemoveVertex(vertex int) {
 	//Remove vertex & its edges from the adjacency list
 	delete(g.adjacencyList, vertex)
 	//Remove all edges pointing to the removed vertex

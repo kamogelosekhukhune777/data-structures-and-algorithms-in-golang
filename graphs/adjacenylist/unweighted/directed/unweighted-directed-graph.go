@@ -22,8 +22,8 @@ func (g *Graph) AddVertex(vertex string) {
 	}
 }
 
-//AddDirectedEdge adds a directed edge from source to destination
-func (g *Graph) AddDirectedEdge(source, destination string) {
+//AddEdge adds a directed edge from source to destination
+func (g *Graph) AddEdge(source, destination string) {
 	//if the suppossed source vertex does not exist we create it
 	if _, exists := g.vertices[source]; !exists {
 		g.AddVertex(source)
@@ -35,9 +35,9 @@ func (g *Graph) AddDirectedEdge(source, destination string) {
 	g.vertices[source] = append(g.vertices[source], destination)
 }
 
-//RemoveDirectedEdge removes a directed edge from
+//RemoveEdge removes a directed edge from
 // source to destination vertex
-func (g *Graph) RemoveDirectedEdge(source, destination string) {
+func (g *Graph) RemoveEdge(source, destination string) {
 	if _, exists := g.vertices[source]; exists {
 		for i, v := range g.vertices[source] {
 			if v == destination {
@@ -53,7 +53,7 @@ func (g *Graph) RemoveDirectedEdge(source, destination string) {
 func (g *Graph) RemoveVertex(vertex string) {
 	delete(g.vertices, vertex)
 	for v := range g.vertices {
-		g.RemoveDirectedEdge(v, vertex)
+		g.RemoveEdge(v, vertex)
 	}
 }
 
