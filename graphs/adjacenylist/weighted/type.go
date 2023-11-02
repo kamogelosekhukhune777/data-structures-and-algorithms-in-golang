@@ -17,3 +17,9 @@ func NewGraph() *Graph {
 		adjacencyList: make(map[int][]Edge),
 	}
 }
+
+func (g *Graph) AddVertex(vertex int) {
+	if _, exists := g.adjacencyList[vertex]; !exists {
+		g.adjacencyList[vertex] = []Edge{}
+	}
+}
