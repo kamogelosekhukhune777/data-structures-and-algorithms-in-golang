@@ -48,7 +48,7 @@ func (g *Graph) RemoveEdge(source, destination string) {
 	}
 }
 
-//RemoveUnweightedVertex removes a Vertex and all its
+//RemoveVertex removes a Vertex and all its
 // associated edges from the edge
 func (g *Graph) RemoveVertex(vertex string) {
 	delete(g.vertices, vertex)
