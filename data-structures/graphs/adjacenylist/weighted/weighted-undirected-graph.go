@@ -52,6 +52,7 @@ func (g *Graph) RemoveEdge(from, to int) {
 	}
 }
 
+/*
 func (g *Graph) RemoveVertex(vertex int) {
 	//Remove vertex & its edges from the adjacency list
 	delete(g.adjacencyList, vertex)
@@ -62,7 +63,7 @@ func (g *Graph) RemoveVertex(vertex int) {
 		}
 	}
 }
-
+*/
 func (g *Graph) PrintGraph() {
 	for vertex, edges := range g.adjacencyList {
 		fmt.Printf("vertex %d ->", vertex)
