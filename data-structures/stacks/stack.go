@@ -29,12 +29,12 @@ func (s *Stack) Pop() (int, error) {
 }
 
 //IsEmpty checks if the stack is empty
-func (s *Stack) IsEmpty() bool {
+/*func (s *Stack) IsEmpty() bool {
 	if len(s.items) == 0 {
 		return true
 	}
 	return false
-}
+}*/
 
 //Peek returns the top item from the stack
 func (s *Stack) Peek() (int, error) {
